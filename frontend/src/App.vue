@@ -1,27 +1,39 @@
+<script>
+import Sidebar from './components/sidebar/Sidebar.vue'
+import { sidebarWidth } from './components/sidebar/state'
+export default {
+  components: { Sidebar },
+  setup() {
+    return { sidebarWidth }
+  }
+}
+</script>
 <template>
-  <div class="app-container">
-    <Header />
-    <main>
-      <router-view />
-    </main>
-    <Footer />
+  <Sidebar />
+  <div :style="{ 'margin-left': sidebarWidth }">
+    <router-view />
   </div>
 </template>
 
-<script setup>
-import Header from "./components/Header.vue";
-import Footer from "./components/Footer.vue";
-</script>
-
-<style scoped>
-.app-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Volle Bildschirmhöhe */
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
 }
 
-main {
-  flex: 1; /* Hauptinhalt nimmt den verbleibenden Platz ein */
-  padding-top: 200px;
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>
