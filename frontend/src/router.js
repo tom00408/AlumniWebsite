@@ -1,0 +1,19 @@
+import { createRouter, createWebHistory } from "vue-router";
+import Home from "./views/Home.vue";
+import Termine from "./views/Termine.vue";
+import Verein from "./views/Verein.vue";
+import MitgliedWerden from "./views/MitgliedWerden.vue";
+
+const routes = [
+  { path: "/", component: Home },
+  { path: "/termine", component: Termine },
+  { path: "/verein", component: Verein },
+  { path: "/mitglied-werden", component : MitgliedWerden}
+];
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
+});
+
+export default router;
