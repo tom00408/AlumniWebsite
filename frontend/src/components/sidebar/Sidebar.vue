@@ -8,10 +8,11 @@
 		class="sidebar"
 		:class="{ 'show-sidebar': showSidebar }"
 		:style="{ width: sidebarWidth }">
+		<img src="/hglogo.png" alt="" class="logo" />
 		<h1>
 			<span v-if="collapsed">
-				<div>H</div>
-				<div>G</div>
+				<div>A</div>
+				<div>V</div>
 			</span>
 			<span v-else>Alumni Verein</span>
 		</h1>
@@ -20,7 +21,9 @@
 		<SidebarLink to="/termine" icon="fas fa-calendar-alt"
 			>Termine</SidebarLink
 		>
-		<SidebarLink to="/verein" icon="fas fa-users">Verein</SidebarLink>
+		<SidebarLink to="/verein" icon="fas fa-users"
+			>Neues im Verein</SidebarLink
+		>
 		<SidebarLink to="/mitglied-werden" icon="fas fa-user-plus"
 			>Mitglied werden</SidebarLink
 		>
@@ -70,6 +73,10 @@ export default {
 </style>
 
 <style scoped>
+.logo {
+	border-radius: 120px;
+	border: 1px solid #ccc;
+}
 /* Standardmäßig verstecken wir den Hamburger-Button */
 .hamburger-menu {
 	display: none;
@@ -120,10 +127,8 @@ export default {
 	/*color: black;*/
 	color: rgba(255, 255, 255, 0.7);
 
-	
-    transition: transform 1s ease-in-out, left 0.3s ease-in-out;
+	transition: transform 1s ease-in-out, left 0.3s ease-in-out;
 }
-
 
 /* Dreh-Effekt für den Toggle-Button */
 .rotate-180 {
@@ -132,6 +137,11 @@ export default {
 }
 /* Mobile Styling */
 @media (max-width: 768px) {
+	.logo {
+		margin-top: 30px;
+		max-width: 150px;
+	}
+
 	.hamburger-menu {
 		display: block;
 	}
