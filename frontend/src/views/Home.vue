@@ -84,5 +84,19 @@ img {
 }
 
 /* Media Query für mobile Geräte */
+@media (max-width: 768px) {
+	.content {
+		flex-direction: column; /* Stapelt die Elemente vertikal */
+		gap: 20px; /* Reduziert den Abstand zwischen den Elementen */
+	}
 
+	.left-text,
+	.right-picture {
+		min-width: 100%; /* Nimmt die volle Breite ein */
+	}
+
+	.right-picture {
+		order: -1; /* Bild wird über dem Text angezeigt */
+	}
+}
 </style>
