@@ -24,6 +24,11 @@
 		<SidebarLink to="/verein" icon="fas fa-users"
 			>Neues im Verein</SidebarLink
 		>
+		
+		<SidebarLink to="/galerie" icon="fas fa-images"
+			>Galerie</SidebarLink
+		>
+
 		<SidebarLink to="/mitglied-werden" icon="fas fa-user-plus"
 			>Mitglied werden</SidebarLink
 		>
