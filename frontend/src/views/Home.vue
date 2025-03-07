@@ -1,5 +1,6 @@
 <template>
 	<div class="content">
+		
 		<div class="left-text">
 			<p class="bold">
 				Der Alumni-Verein des Hainberg-Gymnasiums - ehemalige
@@ -42,19 +43,17 @@
 			<p>Der Vorstand im Alumni-Verein</p>
 		</div>
 		<div class="right-picture">
-			<img
-				src="/ogbild.png"
-				alt="möp" />
+			<img src="/ogbild.png" alt="möp" />
 		</div>
 	</div>
 </template>
 
 <style scoped>
-
-.content{
-  display: flex;
-  justify-content: space-between;
-  gap: 50px;
+.content {
+	display: flex;
+	justify-content: space-between;
+	gap: 50px;
+	flex-wrap: wrap; /* Ermöglicht das Umbruchverhalten bei kleineren Bildschirmen */
 }
 
 .bold {
@@ -63,13 +62,41 @@
 
 .left-text {
 	text-align: left;
+	flex: 1; /* Nimmt den verfügbaren Platz ein */
+	min-width: 300px; /* Mindestbreite für den Textbereich */
 }
 
 p {
 	color: rgb(40, 40, 40);
 }
 
-img{
-  border-radius: 15px;
+img {
+	border-radius: 15px;
+	max-width: 100%; /* Bild passt sich der Breite des Containers an */
+	height: auto; /* Behält das Seitenverhältnis bei */
+}
+
+.right-picture {
+	flex: 1; /* Nimmt den verfügbaren Platz ein */
+	min-width: 300px; /* Mindestbreite für das Bild */
+	display: flex;
+	justify-content: center; /* Zentriert das Bild */
+}
+
+/* Media Query für mobile Geräte */
+@media (max-width: 768px) {
+	.content {
+		flex-direction: column; /* Stapelt die Elemente vertikal */
+		gap: 20px; /* Reduziert den Abstand zwischen den Elementen */
+	}
+
+	.left-text,
+	.right-picture {
+		min-width: 100%; /* Nimmt die volle Breite ein */
+	}
+
+	.right-picture {
+		order: -1; /* Bild wird über dem Text angezeigt */
+	}
 }
 </style>
